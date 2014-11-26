@@ -30,6 +30,9 @@ RUN chmod 755 /usr/local/bin/config.sh
 ADD run.sh /usr/local/bin/run.sh
 RUN chmod 755 /usr/local/bin/run.sh
 
+# Added a tmp folder to enable agent installation
+RUN mkdir -p /usr/share/opscenter/tmp
+
 EXPOSE 8888
 USER root
 CMD ["run.sh"]

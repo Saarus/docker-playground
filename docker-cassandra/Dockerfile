@@ -9,7 +9,7 @@ FROM ubuntu_java
 RUN echo "deb http://debian.datastax.com/community stable main" | sudo tee -a /etc/apt/sources.list.d/datastax.sources.list
 RUN curl -L http://debian.datastax.com/debian/repo_key | sudo apt-key add -
 RUN apt-get update
-RUN apt-get install -y dsc20 openssh-server openssh-client supervisor sysstat psmisc
+RUN apt-get install -y dsc20 cassandra=2.0.* openssh-server openssh-client supervisor sysstat psmisc
 
 # Configure SSH
 RUN mkdir -p /var/run/sshd && chmod -rx /var/run/sshd

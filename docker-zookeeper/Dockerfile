@@ -1,9 +1,9 @@
 FROM ubuntu_java
 
 # Get latest stable release of ZooKeeper
-RUN wget -q -O - http://mirrors.sonic.net/apache/zookeeper/zookeeper-3.4.5/zookeeper-3.4.5.tar.gz \
+RUN wget -q -O - http://mirrors.sonic.net/apache/zookeeper/stable/zookeeper-3.4.6.tar.gz \
   | tar -C /opt -xz
-RUN mv /opt/zookeeper-3.4.5 /opt/zookeeper
+RUN mv /opt/zookeeper-3.4.6 /opt/zookeeper
 
 RUN useradd zookeeper
 RUN mkdir -p /opt/zookeeper/conf
